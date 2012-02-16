@@ -145,9 +145,6 @@
     <classes>
         <class className="feedItems" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/feedItems.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailLabel" candidateClass="UILabel"/>
-            </relationships>
         </class>
         <class className="feedsList" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/feedsList.h"/>

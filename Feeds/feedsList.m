@@ -78,7 +78,9 @@
 {
     if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
         feedItems *nextViewController = [segue destinationViewController];
-        nextViewController.detailString = [NSString stringWithFormat:@"%d",[self.tableView indexPathForSelectedRow].row];
+        
+        nextViewController.titleString = @"Title String";
+        nextViewController.detailString = @"Description String";
     }
 }
 

@@ -7,11 +7,12 @@
 //
 
 #import "feedItems.h"
+#import "RSSParser.h"
 
 
 @implementation feedItems
 
-@synthesize detailString;
+@synthesize titleString, detailString, itemDict;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -52,7 +53,23 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.title = detailString;
+    self.title = titleString;
+    
+    static const NSInteger N_ENTRIES = 10;
+    RSSParser *parser;
+    
+    parser = [RSSParser initWithRSSFeed:(id *)@"http://www.news.wisc.edu/feeds/list/4"];
+    
+    NSString *keyArray[N_ENTRIES];
+    NSString *valueArray[N_ENTRIES];
+    NSInteger i;
+    
+    for (i = 0; i < N_ENTRIES; i++) {
+        keyArray[i] = @"Test";
+        valueArray[i] = @"Test";
+    }
+    
+    itemDict = [NSDictionary dictionaryWithObjects:(id *)valueArray forKeys:(id *)keyArray count:N_ENTRIES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -100,8 +117,8 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = detailString;
-    cell.detailTextLabel.text = @"Test Desc";
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    cell.detailTextLabel.text = detailString;
     
     return cell;
 }

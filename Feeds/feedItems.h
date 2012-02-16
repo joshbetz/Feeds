@@ -9,9 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface feedItems : UITableViewController {
+    NSString *titleString;
     NSString *detailString;
+    NSDictionary *itemDict;
 }
 
+@property (nonatomic,strong) NSString *titleString;
 @property (nonatomic,strong) NSString *detailString;
+@property (nonatomic,strong) NSDictionary *itemDict;
 
 @end
