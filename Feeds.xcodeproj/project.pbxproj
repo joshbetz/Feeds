@@ -18,6 +18,11 @@
 		03A45D6614EDAB6100039CA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A45D4D14EDAB6100039CA9 /* Foundation.framework */; };
 		03A45D6E14EDAB6100039CA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03A45D6C14EDAB6100039CA9 /* InfoPlist.strings */; };
 		03A45D7114EDAB6100039CA9 /* FeedsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A45D7014EDAB6100039CA9 /* FeedsTests.m */; };
+		03A45D7B14EDAB7C00039CA9 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A45D7A14EDAB7C00039CA9 /* Storyboard.storyboard */; };
+		03A66F0B14EDADEE008D8A55 /* feedsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F0A14EDADEE008D8A55 /* feedsList.m */; };
+		03A66F0E14EDAE39008D8A55 /* feedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F0D14EDAE39008D8A55 /* feedItems.m */; };
+		03A66F1314EDBEF0008D8A55 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F1014EDBEF0008D8A55 /* Article.m */; };
+		03A66F1414EDBEF0008D8A55 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F1214EDBEF0008D8A55 /* RSSParser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,18 +40,27 @@
 		03A45D4B14EDAB6100039CA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		03A45D4D14EDAB6100039CA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		03A45D4F14EDAB6100039CA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		03A45D5314EDAB6100039CA9 /* Feeds-Info.plist */ = {isa = PBXFileReference; path = "Feeds-Info.plist"; sourceTree = "<group>"; };
+		03A45D5314EDAB6100039CA9 /* Feeds-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feeds-Info.plist"; sourceTree = "<group>"; };
 		03A45D5514EDAB6100039CA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		03A45D5714EDAB6100039CA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		03A45D5914EDAB6100039CA9 /* Feeds-Prefix.pch */ = {isa = PBXFileReference; path = "Feeds-Prefix.pch"; sourceTree = "<group>"; };
-		03A45D5A14EDAB6100039CA9 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		03A45D5914EDAB6100039CA9 /* Feeds-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Feeds-Prefix.pch"; sourceTree = "<group>"; };
+		03A45D5A14EDAB6100039CA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		03A45D5B14EDAB6100039CA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		03A45D6214EDAB6100039CA9 /* FeedsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03A45D6314EDAB6100039CA9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		03A45D6B14EDAB6100039CA9 /* FeedsTests-Info.plist */ = {isa = PBXFileReference; path = "FeedsTests-Info.plist"; sourceTree = "<group>"; };
+		03A45D6B14EDAB6100039CA9 /* FeedsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeedsTests-Info.plist"; sourceTree = "<group>"; };
 		03A45D6D14EDAB6100039CA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		03A45D6F14EDAB6100039CA9 /* FeedsTests.h */ = {isa = PBXFileReference; path = FeedsTests.h; sourceTree = "<group>"; };
+		03A45D6F14EDAB6100039CA9 /* FeedsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedsTests.h; sourceTree = "<group>"; };
 		03A45D7014EDAB6100039CA9 /* FeedsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedsTests.m; sourceTree = "<group>"; };
+		03A45D7A14EDAB7C00039CA9 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		03A66F0914EDADEE008D8A55 /* feedsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feedsList.h; sourceTree = "<group>"; };
+		03A66F0A14EDADEE008D8A55 /* feedsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = feedsList.m; sourceTree = "<group>"; };
+		03A66F0C14EDAE39008D8A55 /* feedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = feedItems.h; sourceTree = "<group>"; };
+		03A66F0D14EDAE39008D8A55 /* feedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = feedItems.m; sourceTree = "<group>"; };
+		03A66F0F14EDBEF0008D8A55 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		03A66F1014EDBEF0008D8A55 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		03A66F1114EDBEF0008D8A55 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
+		03A66F1214EDBEF0008D8A55 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +90,7 @@
 		03A45D3C14EDAB6000039CA9 = {
 			isa = PBXGroup;
 			children = (
+				03A45D7A14EDAB7C00039CA9 /* Storyboard.storyboard */,
 				03A45D5114EDAB6100039CA9 /* Feeds */,
 				03A45D6914EDAB6100039CA9 /* FeedsTests */,
 				03A45D4A14EDAB6100039CA9 /* Frameworks */,
@@ -106,6 +121,14 @@
 		03A45D5114EDAB6100039CA9 /* Feeds */ = {
 			isa = PBXGroup;
 			children = (
+				03A66F0C14EDAE39008D8A55 /* feedItems.h */,
+				03A66F0D14EDAE39008D8A55 /* feedItems.m */,
+				03A66F0F14EDBEF0008D8A55 /* Article.h */,
+				03A66F1014EDBEF0008D8A55 /* Article.m */,
+				03A66F1114EDBEF0008D8A55 /* RSSParser.h */,
+				03A66F1214EDBEF0008D8A55 /* RSSParser.m */,
+				03A66F0914EDADEE008D8A55 /* feedsList.h */,
+				03A66F0A14EDADEE008D8A55 /* feedsList.m */,
 				03A45D5A14EDAB6100039CA9 /* AppDelegate.h */,
 				03A45D5B14EDAB6100039CA9 /* AppDelegate.m */,
 				03A45D5214EDAB6100039CA9 /* Supporting Files */,
@@ -214,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A45D5614EDAB6100039CA9 /* InfoPlist.strings in Resources */,
+				03A45D7B14EDAB7C00039CA9 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +274,10 @@
 			files = (
 				03A45D5814EDAB6100039CA9 /* main.m in Sources */,
 				03A45D5C14EDAB6100039CA9 /* AppDelegate.m in Sources */,
+				03A66F0B14EDADEE008D8A55 /* feedsList.m in Sources */,
+				03A66F0E14EDAE39008D8A55 /* feedItems.m in Sources */,
+				03A66F1314EDBEF0008D8A55 /* Article.m in Sources */,
+				03A66F1414EDBEF0008D8A55 /* RSSParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +439,7 @@
 				03A45D7614EDAB6100039CA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03A45D7714EDAB6100039CA9 /* Build configuration list for PBXNativeTarget "FeedsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +448,7 @@
 				03A45D7914EDAB6100039CA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
