@@ -7,12 +7,11 @@
 //
 
 #import "feedItems.h"
-#import "RSSParser.h"
 
 
 @implementation feedItems
 
-@synthesize titleString, detailString, itemDict;
+@synthesize titleString, detailString, itemDict, parser;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,22 +53,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.title = titleString;
-    
-    static const NSInteger N_ENTRIES = 10;
-    RSSParser *parser;
-    
-    parser = [RSSParser initWithRSSFeed:(id *)@"http://www.news.wisc.edu/feeds/list/4"];
-    
-    NSString *keyArray[N_ENTRIES];
-    NSString *valueArray[N_ENTRIES];
-    NSInteger i;
-    
-    for (i = 0; i < N_ENTRIES; i++) {
-        keyArray[i] = @"Test";
-        valueArray[i] = @"Test";
-    }
-    
-    itemDict = [NSDictionary dictionaryWithObjects:(id *)valueArray forKeys:(id *)keyArray count:N_ENTRIES];
+    parser = [[RSSParser alloc] initWithRSSFeed:@"http://www.news.wisc.edu/feeds/list/4"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -104,7 +88,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 20;
+    return parser.articleList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,8 +101,9 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row];
-    cell.detailTextLabel.text = detailString;
+    Article *cur = [parser.articleList objectAtIndex:indexPath.row];
+    cell.textLabel.text = cur.title;
+    cell.detailTextLabel.text = @"Test";
     
     return cell;
 }
