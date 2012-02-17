@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Feed.h"
 
 @interface feedsList : UITableViewController
+{
+	NSMutableArray *feedList;
+}
+
+@property (nonatomic,strong) NSMutableArray *feedList;
 
 @end

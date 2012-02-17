@@ -8,8 +8,11 @@
 
 #import "feedsList.h"
 #import "feedItems.h"
+#import "addFeed.h"
 
 @implementation feedsList
+
+@synthesize feedList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,6 +42,18 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.feedList = [NSMutableArray array];
+    
+    Feed *wisc = [Feed alloc];
+    wisc.title = @"Wisc News";
+    wisc.url = @"http://www.news.wisc.edu/feeds/list/4";
+    [feedList addObject:wisc];
+    
+    Feed *jb = [Feed alloc];
+    jb.title = @"Josh Betz Blog";
+    jb.url = @"http://joshbetz.com/feed/";
+    [feedList addObject:jb];
 }
 
 - (void)viewDidUnload
@@ -79,8 +94,14 @@
     if ([[segue identifier] isEqualToString:@"ShowDetail"]) {
         feedItems *nextViewController = [segue destinationViewController];
         
-        nextViewController.titleString = @"Title String";
-        nextViewController.detailString = @"Description String";
+        Article *cur = [feedList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        nextViewController.titleString = cur.title;
+        nextViewController.detailString = cur.url;
+    }
+    if ([[segue identifier] isEqualToString:@"ShowNewFeed"]) {
+        addFeed *nextViewController = [segue destinationViewController];
+        
+        nextViewController.feedList = feedList;
     }
 }
 
@@ -95,7 +116,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 20;
+    return feedList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,7 +129,8 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%d",indexPath.row];
+    Article *cur = [feedList objectAtIndex:indexPath.row];
+    cell.textLabel.text = cur.title;
     
     return cell;
 }

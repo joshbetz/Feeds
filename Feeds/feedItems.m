@@ -53,7 +53,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.title = titleString;
-    parser = [[RSSParser alloc] initWithRSSFeed:@"http://www.news.wisc.edu/feeds/list/4"];
+    parser = [[RSSParser alloc] initWithRSSFeed:detailString];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -102,8 +102,15 @@
     
     // Configure the cell...
     Article *cur = [parser.articleList objectAtIndex:indexPath.row];
-    cell.textLabel.text = cur.title;
-    cell.detailTextLabel.text = @"Test";
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM.dd.YY"];
+    //Optionally for time zone converstions
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"..."]];
+    NSString *stringFromDate = [formatter stringFromDate:cur.date];
+    
+    cell.textLabel.text = [cur.title stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    cell.detailTextLabel.text = stringFromDate;
     
     return cell;
 }
@@ -151,13 +158,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    Article *cur = [parser.articleList objectAtIndex:indexPath.row];
+    NSURL *url = [ [ NSURL alloc ] initWithString: cur.url];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

@@ -23,6 +23,8 @@
 		03A66F0E14EDAE39008D8A55 /* feedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F0D14EDAE39008D8A55 /* feedItems.m */; };
 		03A66F1314EDBEF0008D8A55 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F1014EDBEF0008D8A55 /* Article.m */; };
 		03A66F1414EDBEF0008D8A55 /* RSSParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F1214EDBEF0008D8A55 /* RSSParser.m */; };
+		03A66F2814EDF7CD008D8A55 /* Feed.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F2714EDF7CD008D8A55 /* Feed.m */; };
+		03A66F2B14EDFC9E008D8A55 /* addFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 03A66F2A14EDFC9E008D8A55 /* addFeed.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,10 @@
 		03A66F1014EDBEF0008D8A55 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		03A66F1114EDBEF0008D8A55 /* RSSParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSSParser.h; sourceTree = "<group>"; };
 		03A66F1214EDBEF0008D8A55 /* RSSParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSSParser.m; sourceTree = "<group>"; };
+		03A66F2614EDF7CD008D8A55 /* Feed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Feed.h; sourceTree = "<group>"; };
+		03A66F2714EDF7CD008D8A55 /* Feed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Feed.m; sourceTree = "<group>"; };
+		03A66F2914EDFC9E008D8A55 /* addFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFeed.h; sourceTree = "<group>"; };
+		03A66F2A14EDFC9E008D8A55 /* addFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFeed.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,10 @@
 				03A66F1214EDBEF0008D8A55 /* RSSParser.m */,
 				03A66F0914EDADEE008D8A55 /* feedsList.h */,
 				03A66F0A14EDADEE008D8A55 /* feedsList.m */,
+				03A66F2914EDFC9E008D8A55 /* addFeed.h */,
+				03A66F2A14EDFC9E008D8A55 /* addFeed.m */,
+				03A66F2614EDF7CD008D8A55 /* Feed.h */,
+				03A66F2714EDF7CD008D8A55 /* Feed.m */,
 				03A45D5A14EDAB6100039CA9 /* AppDelegate.h */,
 				03A45D5B14EDAB6100039CA9 /* AppDelegate.m */,
 				03A45D5214EDAB6100039CA9 /* Supporting Files */,
@@ -278,6 +288,8 @@
 				03A66F0E14EDAE39008D8A55 /* feedItems.m in Sources */,
 				03A66F1314EDBEF0008D8A55 /* Article.m in Sources */,
 				03A66F1414EDBEF0008D8A55 /* RSSParser.m in Sources */,
+				03A66F2814EDF7CD008D8A55 /* Feed.m in Sources */,
+				03A66F2B14EDFC9E008D8A55 /* addFeed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
