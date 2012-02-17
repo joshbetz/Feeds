@@ -33,17 +33,11 @@
 #pragma mark - View lifecycle
 
 -(IBAction) saveAction
-{
-    //save stuff
-    NSString *title = [titleField text];
-    NSString *url  = [detailField text];  
-        
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setObject:title forKey:@"title"];
-    [defaults setObject:url forKey:@"url"];
-    
-    [defaults synchronize];
+{  
+    Feed *tmp = [Feed alloc];
+    tmp.title = titleField.text;
+    tmp.url = detailField.text;
+    [feedList addObject:tmp];
     
     [self.navigationController popToRootViewControllerAnimated: YES];
 }

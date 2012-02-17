@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad
 {
-    self.feedList = [NSMutableArray array];
+    self.feedList = [NSMutableArray array];    
     
     Feed *wisc = [Feed alloc];
     wisc.title = @"Wisc News";
@@ -46,24 +46,14 @@
     jb.title = @"Josh Betz Blog";
     jb.url = @"http://joshbetz.com/feed/";
     [feedList addObject:jb];
-    
-    Feed *temp = [Feed alloc];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    NSString *title = [defaults objectForKey:@"title"];
-    NSString *url = [defaults objectForKey:@"url"];
-    
-    temp.title = title;
-    temp.url = url;
-    [feedList addObject:temp];
-    
+        
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    //Editing button
+    //self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -120,7 +110,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
     return feedList.count;
 }
 
