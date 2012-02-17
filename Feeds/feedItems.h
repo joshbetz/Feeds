@@ -12,13 +12,11 @@
 @interface feedItems : UITableViewController {
     NSString *titleString;
     NSString *detailString;
-    NSDictionary *itemDict;
     RSSParser *parser;
 }
 
 @property (nonatomic,strong) NSString *titleString;
 @property (nonatomic,strong) NSString *detailString;
-@property (nonatomic,strong) NSDictionary *itemDict;
 @property (nonatomic,strong) RSSParser *parser;
 
 @end

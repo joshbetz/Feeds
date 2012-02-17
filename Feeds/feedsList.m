@@ -8,7 +8,6 @@
 
 #import "feedsList.h"
 #import "feedItems.h"
-#import "addFeed.h"
 
 @implementation feedsList
 
@@ -46,6 +45,21 @@
     jb.title = @"Josh Betz Blog";
     jb.url = @"http://joshbetz.com/feed/";
     [feedList addObject:jb];
+    
+    Feed *wh = [Feed alloc];
+    wh.title = @"Wilmot High School";
+    wh.url = @"http://wilmothighschool.com/feed/";
+    [feedList addObject:wh];
+    
+    Feed *ph = [Feed alloc];
+    ph.title = @"Pat Hartl";
+    ph.url = @"http://pathartl.me/feed/";
+    [feedList addObject:ph];
+    
+    Feed *css = [Feed alloc];
+    css.title = @"CSS Tricks";
+    css.url = @"http://css-tricks.com/feed/";
+    [feedList addObject:css];
         
     [super viewDidLoad];
 

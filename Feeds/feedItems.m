@@ -11,7 +11,7 @@
 
 @implementation feedItems
 
-@synthesize titleString, detailString, itemDict, parser;
+@synthesize titleString, detailString, parser;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
