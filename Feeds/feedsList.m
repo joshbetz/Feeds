@@ -35,14 +35,6 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     self.feedList = [NSMutableArray array];
     
     Feed *wisc = [Feed alloc];
@@ -54,6 +46,24 @@
     jb.title = @"Josh Betz Blog";
     jb.url = @"http://joshbetz.com/feed/";
     [feedList addObject:jb];
+    
+    Feed *temp = [Feed alloc];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *title = [defaults objectForKey:@"title"];
+    NSString *url = [defaults objectForKey:@"url"];
+    
+    temp.title = title;
+    temp.url = url;
+    [feedList addObject:temp];
+    
+    [super viewDidLoad];
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -97,11 +107,6 @@
         Article *cur = [feedList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         nextViewController.titleString = cur.title;
         nextViewController.detailString = cur.url;
-    }
-    if ([[segue identifier] isEqualToString:@"ShowNewFeed"]) {
-        addFeed *nextViewController = [segue destinationViewController];
-        
-        nextViewController.feedList = feedList;
     }
 }
 

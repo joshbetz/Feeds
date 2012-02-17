@@ -7,6 +7,7 @@
 //
 
 #import "addFeed.h"
+#import "feedsList.h"
 
 @implementation addFeed
 
@@ -34,9 +35,15 @@
 -(IBAction) saveAction
 {
     //save stuff
-    Feed *temp = [Feed alloc];
-    temp.title = titleField.text;
-    temp.url = detailField.text;
+    NSString *title = [titleField text];
+    NSString *url  = [detailField text];  
+        
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:title forKey:@"title"];
+    [defaults setObject:url forKey:@"url"];
+    
+    [defaults synchronize];
     
     [self.navigationController popToRootViewControllerAnimated: YES];
 }
